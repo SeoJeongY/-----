@@ -4,19 +4,15 @@ from tkinter import messagebox
 
 window = tkt.Tk()
 window.title('Notepad')
-window.geometry('400x400+800+300')  # 400x400: 창 크기   800+300: 창이 800,300 위치에 띄워진다
+window.geometry('400x400+800+300')
 window.resizable(0,0)
 
 window.iconbitmap("C:\\Users\\User\\OneDrive\\바탕 화면\\memo.ico")
-# photo = tkt.PhotoImage(file="C:\\Study\\해달\\부트캠프\\2024-1-파이썬응용\\해달로고.png")
-# window.iconphoto(False, photo)
 
-# 텍스트 창 만들기 
-text_area = tkt.Text(window)
-# 공백 설정하기 
+
+text_area = tkt.Text(window) 
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
-# 텍스트 화면을 윈도우에 동서남북으로 붙인다
 text_area.grid(sticky=tkt.N+tkt.E+tkt.S+tkt.W)
 
 

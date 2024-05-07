@@ -31,6 +31,8 @@ def on_equal():
             result = "Error"
     elif 연산자 == "%":
         result = first_num % second_num
+    if result == int(result):
+        result = int(result)
     entry.insert(0, result)
 
 # 윈도우 생성

@@ -31,8 +31,11 @@ def on_equal():
             result = "Error"
     elif 연산자 == "%":
         result = first_num % second_num
+
+    # 결과가 정수인지 확인하여 소수점 아래 값이 없을 경우 정수로 표시
     if result == int(result):
         result = int(result)
+
     entry.insert(0, result)
 
 # 윈도우 생성
@@ -47,11 +50,9 @@ root.iconphoto(False, photo)
 entry = tkt.Entry(root, width=20, borderwidth=12, font=("Verdana", 13), justify="right")
 entry.grid(row=0, column=0, columnspan=4, pady=10)
 
-
 def create_button(text, row, column, command, width=13, height=9, columnspan=1, rowspan=1, bg=None):
     button = tkt.Button(root, text=text, padx=width, pady=height, command=command, bg=bg, font=('Helvetica',14, 'bold'), borderwidth=3)
     button.grid(row=row, column=column, columnspan=columnspan, rowspan=rowspan, sticky='nsew')
-
 
 for number in range(9):
     create_button(number + 1, 4-number//3, number%3, lambda n=number+1: on_click(n), bg='gainsboro')
